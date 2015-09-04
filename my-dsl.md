@@ -1,38 +1,41 @@
 # Language
-_What is the name of the language? Link the name to its webpage 
-(if appropriate)._
+[http://www.gnu.org/software/sed/manual/sed.html](sed)
 
 
 # Domain
-_Describe the language's domain in five words._
+Line-by-line text manipulation
 
 
 # Computational model
-_What is the underlying computational model of this language? To answer this 
-question, provide a high-level description (no more than 100 words) of the 
-computation that occurs when someone executes a program in this language._
+A sed program is given an input stream of text. It reads it line by line, and
+for each line, it sees if any of the rules specified in the program match it
+and performs the specified action for that rule.
 
 
 # DSL-ness
-_Fowler writes about a spectrum of languages, from general-purpose languages to 
-"purely" domain-specific. Where does the DSL you chose fall on this spectrum, 
-and why?_ 
+Sed is very close to being "purely" domain-specific. It can only process streams
+of text in order, so it cannot do any loops. Even if it were Turing-complete,
+its syntax is so well-tuned for text processing that nobody uses it for anything
+else.
 
 
 # Internal or external?
-_Is the language implemented as an internal or external DSL? 
-Justify your answer._
+Sed is usually an internal DSL, as it is usually invoked from shell scripts in a
+pipeline. Occasionally, however, it is used as an external DSL to make some
+quick modifications to a file.
 
 
 # Host language
-_What language(s) was (were) used to implement the DSL?_
+Usually the sed language is in a shell script but sometimes it is standalone.
+The language is almost always executed by the sed program.
 
 
 # Benefits
-_Identify one potential benefit of the DSL: how is a programmer's life or a 
-company's bottom line made easier by the existence of this language?_
+It makes it very easy to make simple edits to a text document. One useful
+example is for changing the copyright date on every page on a website when
+the new year happens.
 
 
 # Drawbacks
-_Identify one potential drawback of the DSL: what does a programmer or company 
-lose by using this DSL instead of a general-purpose language?_
+All it can do is mapipulate text, so other languages are requred to do anything
+else.

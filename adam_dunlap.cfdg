@@ -1,0 +1,34 @@
+startshape clock
+
+rule clock
+{
+    // A clock has an outer face, 2 hands, and a clock at each number
+    CIRCLE { a -0.5 }
+    hand { size 0.8 rotate 19 }
+    hand { rotate 225 }
+
+    offsetclock { rotate 0 }
+    offsetclock { rotate 30 }
+    offsetclock { rotate 60 }
+    offsetclock { rotate 90 }
+    offsetclock { rotate 120 }
+    offsetclock { rotate 150 }
+    offsetclock { rotate 180 }
+    offsetclock { rotate 210 }
+    offsetclock { rotate 240 }
+    offsetclock { rotate 270 }
+    offsetclock { rotate 300 }
+    offsetclock { rotate 330 }
+}
+
+rule offsetclock
+{
+    clock { size 0.1 y 0.45 }
+}
+
+//// Hand is like a triangle. Made with a bunch of circles that get smaller as
+//// they go out
+rule hand {
+    CIRCLE { size 0.03 }
+    hand { y 0.001 size 0.9980 }
+}
