@@ -12,7 +12,10 @@ because nesting rules is so easy.
 ## What is hard to do in this language? Why is it hard?
 It's hard to do free drawings because to do that, you'd have to break them up
 into squares and circles and then "smear" them over the areas you want drawn
-recursively.
+recursively. It's also hard to draw shapes that are alike in some ways but
+have suble differences. (In my case, I wanted to be able to specify the position
+of the hands on the clocks.) In version 3 of Context Free, however, it appears
+this becomes easier because parameters can be passed to shapes.
 
 
 ## How did you learn how to program in this language?
